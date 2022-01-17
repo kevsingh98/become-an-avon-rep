@@ -1,0 +1,146 @@
+body {
+  font-family: Montserrat, DejaVu Sans, Verdana, sans‑serif;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  padding-top: 116px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.fluidContainer {
+  padding: 0 52px;
+  max-width: calc(1440px + 104px);
+  margin: auto;
+}
+
+.header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 600;
+  color: #121212;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 117px;
+  }
+
+  &__actionGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__action {
+    width: auto;
+    height: auto;
+    margin-right: 30px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
+.navigation {
+  width: 100%;
+  padding: 0;
+
+  &__secondary {
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 11px 6px -10px rgb(168 168 168 / 20%),
+      inset 0 -11px 6px -10px rgb(168 168 168 / 20%);
+    display: flex;
+    font-weight: 500;
+    color: #5c4b61;
+    margin: auto;
+
+    .navigation__item {
+      padding: 15px 0;
+    }
+    .navigation__items {
+      padding: 0;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: none;
+    padding: 25px 0;
+    letter-spacing: 1px;
+    margin-right: 25px;
+    font-size: 14px;
+
+    &--active {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        height: 2px;
+        background: linear-gradient(90deg, #6b22c3 0, #db495f 100%);
+        content: "";
+      }
+    }
+  }
+}
+
+.button {
+  vertical-align: middle;
+  cursor: pointer;
+
+  &--icon {
+    height: 30px;
+    width: 30px;
+    border: none;
+    background: none;
+  }
+}
+
+.banner {
+  background-color: #702283;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 14px;
+  display: flex;
+
+  &__content {
+    margin: auto;
+    max-width: 480px;
+    text-align: center;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
