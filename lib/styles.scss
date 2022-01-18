@@ -3,6 +3,8 @@
 // Colours
 $color-primary: #702283;
 $color-primaryDark: #5c4b61;
+$color-primaryLight: #7f28c4;
+$color-secondary: #de1c57;
 $color-light: #fff;
 $color-dark: #000;
 $color-grey: #121212;
@@ -166,7 +168,7 @@ p {
   }
 
   &--withColor {
-    background: $color-primary;
+    background: $color-primaryLight;
 
     &:hover {
       background-color: $color-dark;
@@ -235,7 +237,7 @@ p {
 .formInput {
   margin-top: $spacing--double;
   border: 1px solid $color-dark;
-  border-radius: 2px;
+  border-radius: 4px;
   overflow: hidden;
 
   &__wrapper {
@@ -266,11 +268,13 @@ p {
 .section {
   margin-bottom: $spacing--double * 2;
   text-align: center;
+  position: relative;
 
   &__title {
     line-height: 1.1;
     font-size: $fontSize--title;
     font-weight: 900;
+    text-transform: uppercase;
 
     &--withSeperation {
       margin: $spacing--double * 2 0;
@@ -301,26 +305,52 @@ p {
   }
 
   &--overlay {
-    margin: $spacing--double;
+    position: absolute;
+    background: $color-light;
+    border: 1px solid $color-primary;
+    padding: $spacing--double $spacing;
+    width: calc(100% - #{$spacing--double * 2});
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 8px;
+  }
+
+  &--afterOverlay {
+    margin-top: 23rem;
   }
 }
 
-.repStories {
+.block {
   display: flex;
   justify-content: center;
+  gap: $spacing--double;
 
-  &__video {
+  &__media {
     width: 400px;
     height: 225px;
+    // overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__text {
     font-size: $fontSize;
     width: 300px;
-    margin-left: $spacing--double;
-    h2 {
-      text-align: left;
+    text-align: left;
+  }
+}
+
+.text {
+  a {
+    &:hover {
+      text-decoration: underline;
     }
+  }
+  &--light {
+    color: #ccc;
   }
 }
 
@@ -338,7 +368,7 @@ p {
     padding: 0 $spacing--double;
 
     h4 {
-      color: #de1c57;
+      color: $color-secondary;
       text-transform: uppercase;
       line-height: 1;
     }
@@ -359,31 +389,117 @@ p {
   }
 
   &__item {
-    text-align: left;
-    color: $color-light;
-    text-transform: uppercase;
-    padding: 30% $spacing $spacing--double;
+    text-align: center;
     position: relative;
 
+    p{
+      margin: 0;
+    }
+
+    h4{
+      font-size: $fontSize--small;
+      margin: $spacing--half 0;
+      font-weight: 900;
+    }
+    
     h3 {
       margin: 0;
       font-weight: 900;
       padding-bottom: $spacing;
       letter-spacing: 2px;
     }
-
+    
     .outline {
       -webkit-text-stroke: 1px #ffffffbb;
     }
+    
+    img{
+      max-width: 100%;
+    }
+    
+    &--colored{
+      text-align: left;
+      color: $color-light;
+      padding: 30% $spacing $spacing--double;
+      text-transform: uppercase;
 
-    &--color1 {
-      background: #e11d58;
+      &1 {
+        background: #e11d58;
+      }
+      &2 {
+  
+        background: #bf1f85;
+      }
+      &3 {
+        background: #9823b3;
+      }
     }
-    &--color2 {
-      background: #bf1f85;
+
+  }
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // justify-content: space-between;
+
+  &__wrapper {
+    text-align: center;
+    padding: 0 $spacing;
+    border-right: 1px solid #ccc;
+    // max-width: 8em;
+
+    &:first-of-type {
+      padding-left: 0;
     }
-    &--color3 {
-      background: #9823b3;
+
+    &:last-of-type {
+      border: none;
+      padding-right: 0;
+    }
+
+    h6 {
+      color: $color-secondary;
+      text-transform: uppercase;
+      margin: 0;
+      height: $spacing--double + $spacing;
+    }
+
+    img {
+      width: 3em;
+    }
+  }
+}
+
+.products {
+  max-width: 100%;
+  display: grid;
+  grid-gap: $spacing--double;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__item {
+    p {
+      text-align: left;
+    }
+
+    ul {
+      text-align: left;
+      font-size: $fontSize--small;
+    }
+
+    h4 {
+      margin: $spacing 0;
+    }
+
+    span {
+      text-decoration: line-through;
+      color: $color-secondary;
+      display: block;
+      font-size: $fontSize--small;
+    }
+
+    img {
+      width: 100%;
     }
   }
 }
