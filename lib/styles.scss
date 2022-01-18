@@ -45,6 +45,10 @@ p {
   font-size: $fontSize--small;
 }
 
+img {
+  width: 100%;
+}
+
 .fluidContainer {
   padding: 0 $spacing;
   max-width: calc(1440px + 104px);
@@ -167,6 +171,20 @@ p {
     background-color: $color-grey;
   }
 
+  &--round {
+    border: 1px solid $color-dark;
+    color: $color-dark;
+    background: $color-light;
+    padding: $spacing--half;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      color: $color-light;
+    }
+  }
+
   &--withColor {
     background: $color-primaryLight;
 
@@ -219,6 +237,18 @@ p {
   align-items: center;
   text-transform: uppercase;
 
+  &--small {
+    padding: $spacing--double;
+
+    .hero__title {
+      font-size: $fontSize--title;
+    }
+
+    .hero__subheading {
+      font-size: $fontSize--small;
+    }
+  }
+
   &__title {
     color: $color-light;
     font-size: $fontSize--large;
@@ -228,6 +258,7 @@ p {
   }
 
   &__subheading {
+    color: $color-light;
     font-size: $fontSize--large;
     font-weight: 900;
     margin: 0;
@@ -236,27 +267,55 @@ p {
 
 .formInput {
   margin-top: $spacing--double;
-  border: 1px solid $color-dark;
+  // border: 1px solid $color-dark;
   border-radius: 4px;
   overflow: hidden;
+  text-align: left;
+
+  &--inline {
+    .formInput__wrapper {
+      grid-gap: 0;
+    }
+    .formInput__field {
+      width: 20em;
+    }
+  }
 
   &__wrapper {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    grid-template-rows: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 42px;
+    margin-bottom: $spacing;
+    padding: 0 $spacing--double * 4;
+    width: 100%;
   }
 
   &__field {
-    width: 20em;
+    width: 100%;
+    max-width: 22rem;
     height: inherit;
     outline: none;
-    border: none;
+    border: 1px solid $color-dark;
     font-size: $fontSize--small;
     padding: $spacing--half $spacing;
+
+    &:active,
+    &:focus {
+      border: 2px solid $color-primary;
+    }
+
+  }
+
+  &__inline {
+    display: grid;
+    max-width: 22rem;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $spacing;
   }
 
   &__label {
-    display: none;
+    margin: auto 0;
+    font-size: $fontSize;
   }
 
   &__button {
@@ -328,12 +387,7 @@ p {
   &__media {
     width: 400px;
     height: 225px;
-    // overflow: hidden;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
+    overflow: hidden;
   }
 
   &__text {
@@ -358,10 +412,6 @@ p {
   display: grid;
   grid-template-rows: repeat(2, 196px);
   grid-template-columns: repeat(4, 196px);
-
-  img {
-    width: 100%;
-  }
 
   &__text {
     text-align: center;
@@ -392,32 +442,32 @@ p {
     text-align: center;
     position: relative;
 
-    p{
+    p {
       margin: 0;
     }
 
-    h4{
+    h4 {
       font-size: $fontSize--small;
       margin: $spacing--half 0;
       font-weight: 900;
     }
-    
+
     h3 {
       margin: 0;
       font-weight: 900;
       padding-bottom: $spacing;
       letter-spacing: 2px;
     }
-    
+
     .outline {
       -webkit-text-stroke: 1px #ffffffbb;
     }
-    
-    img{
+
+    img {
       max-width: 100%;
     }
-    
-    &--colored{
+
+    &--colored {
       text-align: left;
       color: $color-light;
       padding: 30% $spacing $spacing--double;
@@ -427,27 +477,23 @@ p {
         background: #e11d58;
       }
       &2 {
-  
         background: #bf1f85;
       }
       &3 {
         background: #9823b3;
       }
     }
-
   }
 }
 
 .feature {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  // justify-content: space-between;
 
   &__wrapper {
     text-align: center;
     padding: 0 $spacing;
     border-right: 1px solid #ccc;
-    // max-width: 8em;
 
     &:first-of-type {
       padding-left: 0;
@@ -497,9 +543,47 @@ p {
       display: block;
       font-size: $fontSize--small;
     }
-
-    img {
-      width: 100%;
-    }
   }
+}
+
+.modal {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000086;
+  display: none;
+
+  &--active {
+    display: block;
+  }
+
+  &__content {
+    border-radius: 6px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 810px;
+    background-color: $color-light;
+    padding: $spacing--double;
+    text-align: right;
+  }
+
+  &__btnWrapper {
+    margin-right: $spacing--double * 4;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+.noScroll {
+  overflow: hidden;
 }
