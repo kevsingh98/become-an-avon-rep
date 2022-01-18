@@ -171,6 +171,16 @@ img {
     background-color: $color-grey;
   }
 
+  &--secondary {
+    border: 1px solid $color-dark;
+    color: $color-dark;
+    background: $color-light;
+    
+    &:hover {
+      color: $color-light;
+    }
+  }
+
   &--round {
     border: 1px solid $color-dark;
     color: $color-dark;
@@ -267,7 +277,6 @@ img {
 
 .formInput {
   margin-top: $spacing--double;
-  // border: 1px solid $color-dark;
   border-radius: 4px;
   overflow: hidden;
   text-align: left;
@@ -286,7 +295,7 @@ img {
     justify-content: space-between;
     height: 42px;
     margin-bottom: $spacing;
-    padding: 0 $spacing--double * 4;
+    padding: 0 $spacing--double * 2;
     width: 100%;
   }
 
@@ -303,7 +312,6 @@ img {
     &:focus {
       border: 2px solid $color-primary;
     }
-
   }
 
   &__inline {
@@ -547,7 +555,7 @@ img {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 0;
   top: 0;
@@ -572,8 +580,14 @@ img {
     text-align: right;
   }
 
+  &__footer{
+    text-align: left;
+    font-size: $fontSize--small;
+    padding: $spacing--half $spacing--double*2;
+  }
+
   &__btnWrapper {
-    margin-right: $spacing--double * 4;
+    margin-right: $spacing--double * 2;
   }
 
   &__close {

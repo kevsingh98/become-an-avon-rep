@@ -17,7 +17,6 @@
         rel="stylesheet">
 </head>
 
-<!-- <body class="noScroll"> -->
 
 <body>
     <header class="header">
@@ -94,7 +93,7 @@
             <form class="formInput formInput--inline" action="#">
                 <div class="formInput__wrapper">
                     <input class="formInput__field" id="email" type="email" placeholder="Your Email" required />
-                    <button class="formInput__button button" value="Get Started"> Get Started</button>
+                    <button class="formInput__button button CTAButton" value="Get Started"> Get Started</button>
                 </div>
             </form>
         </section>
@@ -156,7 +155,7 @@
         </section>
 
         <section class="section">
-            <button class="button button--large button--withColor" value="Apply Now">APPLY NOW</button>
+            <button class="button button--large button--withColor CTAButton" value="Apply Now">APPLY NOW</button>
         </section>
 
         <section class="section section--withBackground">
@@ -265,7 +264,7 @@
                 Plus, you can earn back the cost of your Welcome Kit when you reach your goals!*
             </p>
 
-            <button class="button button--large button--withColor" value="Apply Now">APPLY NOW</button>
+            <button class="button button--large button--withColor CTAButton" value="Apply Now">APPLY NOW</button>
 
             <p class="text text--light">You can also get your Welcome Kits without the brochures and sales tools. <br>
                 *For T&Cs <a href="#">click here</a>
@@ -360,7 +359,7 @@
                 </div>
             </div>
 
-            <button class="button button--large button--withColor" value="Apply Today">APPLY TODAY</button>
+            <button class="button button--large button--withColor CTAButton" value="Apply Today">APPLY TODAY</button>
 
         </section>
 
@@ -405,7 +404,8 @@
                 achieved, check out our <a href="#">Causes page.</a>
             </p>
 
-            <button class="button button--large button--withColor" value="Empower Yourself">EMPOWER YOURSELF</button>
+            <button class="button button--large button--withColor CTAButton" value="Empower Yourself">EMPOWER
+                YOURSELF</button>
 
         </section>
 
@@ -421,7 +421,7 @@
         </section>
     </main>
 
-    <div class="modal modal--active">
+    <div class="modal">
         <div id="step1" class="section modal__content">
 
             <div class=" section__title hero hero--small">
@@ -464,13 +464,100 @@
 
 
             <div class="modal__btnWrapper">
-                <button class="button button--large" value="NEXT STEP">NEXT STEP</button>
+                <button class="button button--large" id="next" value="NEXT STEP">NEXT STEP</button>
             </div>
             </section>
 
 
             <div class="modal__close">
-                <button class="button button--round" value="close">X</button>
+                <button class="button button--round close" value="close">X</button>
+            </div>
+        </div>
+
+        <div id="step2" style="display: none;" class="section modal__content">
+
+            <div class=" section__title hero hero--small">
+                <h2 class="hero__title">Contact Information
+                </h2>
+                <p class="hero__subheading">STEP 2 OUT OF 2</p>
+            </div>
+
+            <form class="formInput" action="#">
+                <div class="formInput__wrapper">
+                    <label class="formInput__label" for="postcode">Postcode</label>
+
+                    <div class="formInput__inline">
+
+                        <input class="formInput__field" id="postcode" type="text" placeholder="Post Code" required />
+                        <button class="button button--secondary" value="Lookup">Lookup</button>
+                    </div>
+                </div>
+                <div class="formInput__wrapper">
+                    <label class="formInput__label" for="address">Address</label>
+                    <input class="formInput__field" id="address" type="text" placeholder="House Address" required />
+                </div>
+                <div class="formInput__wrapper">
+                    <label class="formInput__label" for="phone">Contact Number</label>
+                    <input class="formInput__field" id="phone" type="tel" placeholder="Mobile Number" required />
+                </div>
+
+                <div class="formInput__wrapper">
+                    <label class="formInput__label" for="bestTime">Best time to contact</label>
+                    <select class="formInput__field" name="bestTime" id="bestTime">
+
+                        <option>Select preferred time</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
+                        <option value="Anytime">Anytime</option>
+                    </select>
+                </div>
+
+                <div class="formInput__wrapper">
+                    <label class="formInput__label" for="bestMethod">Best method to contact</label>
+                    <select class="formInput__field" name="bestMethod" id="bestMethod">
+
+                        <option>Select preferred method</option>
+                        <option value="Phone">Phone</option>
+                        <option value="Email">Email</option>
+                        <option value="Face-to-face">Face-to-face</option>
+                    </select>
+                </div>
+            </form>
+
+            <div class="modal__footer">
+
+                <label for="terms">
+                    <input name="terms" id="terms" type="checkbox">
+                    By clicking ‘Finish Application’ I confirm that I am happy to proceed with my application and that:
+
+                </label>
+
+                <p>
+                    I have read and agree to the <a href="#">
+                        Representative Agreement terms
+                    </a> and <a href="">
+                        conditions and Avon's Privacy Statement and Cookie Policy
+                    </a>
+
+                <p class="text text--light">
+
+                    You’ll need to select and order a ‘Welcome Kit’ to help get you up and running with Avon. There
+                    are
+                    two kits to choose from, designed to suit your needs.
+                </p>
+                </p>
+            </div>
+
+            <div class="modal__btnWrapper">
+                <button class="button button--withColor button--large" id="finish" value="Finish Application">Finish
+                    Application</button>
+            </div>
+
+            </section>
+
+            <div class="modal__close">
+                <button class="button button--round close" value="close">X</button>
             </div>
         </div>
     </div>
